@@ -4,6 +4,7 @@ import { postServerCount } from "./modules/post.js";
 import { vacuumDb, closeDb } from "./modules/sqlite3.js";
 
 const { token } = config;
+const keepAlive = require("./server");
 
 // Vacuum database
 vacuumDb();
@@ -20,3 +21,5 @@ manager.on("shardCreate", shard => console.log(`Launched client (${shard.id}).`)
 setInterval(async () => {
   manager.fetchClientValues("guilds.cache.size").then(postServerCount);
 }, 60 * 60 * 1000);
+
+keepAlive();

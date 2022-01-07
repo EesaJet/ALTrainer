@@ -1,6 +1,6 @@
 export default {
   prefix: "!",
-  token: "OTI4ODA5OTk1MDc0Njk1MjA5.YdeLtw.QvFniSAzVgo_XWJ22bjF7iu3OFU",
+  token: process.env['token'],
   botOwner: "710860868850716666",
   channelMax: 2,
   clientId: "713331743214825522",
