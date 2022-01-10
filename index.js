@@ -20,3 +20,8 @@ manager.on("shardCreate", shard => console.log(`Launched client (${shard.id}).`)
 setInterval(async () => {
   manager.fetchClientValues("guilds.cache.size").then(postServerCount);
 }, 60 * 60 * 1000);
+
+const keepAlive = require('./server');
+keepAlive();
+// Login the bot
+client.login("OTI4ODA5OTk1MDc0Njk1MjA5.YdeLtw.GrKdLQej3Ui7XH69cFrCmv-jsBQ")
